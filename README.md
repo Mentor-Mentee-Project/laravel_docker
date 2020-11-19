@@ -45,4 +45,4 @@ You are ready to go!
 ### db container
 
 - Base image
-  - [alpine](https://hub.docker.com/_/postgres):8.0
+  - [alpine](https://hub.docker.com/_/postgres):
