@@ -3,7 +3,6 @@
 ## Introduction
 Build Laravel development environment using Nginx + PostgreSQL with docker-compose.
 This repository is highly inspired by https://github.com/ucan-lab/docker-laravel. Many thanks to [Yuki Imamura](https://github.com/ucan-lab).
-The setting and instruction are expecially modified for **Windows OS**.
 
 ## Usage
 
@@ -14,10 +13,16 @@ $ cd laravel_docker
 $ git clone [whatever repository you want to clone] ./backend # Clone the existing repository you are about to work on
 $ make init
 ```
-Then, start up Command Prompt as **Administrator** on WIndows and
+You have to take an either step A or B depending on your environment.
+A. If you are using Windows 
 ```Command Prompt
 $ cd [laravel_docker root]/backend/public
 $ mklink /D storage "/work/backend/storage/app/public"
+```
+
+B. If you are using Mac or Linux
+```
+$ docker-compose exec app php artisan storage:link
 ```
 
 You are ready to go!
