@@ -1,30 +1,26 @@
-# docker-laravel 🐳
-
-![License](https://img.shields.io/github/license/ucan-lab/docker-laravel?color=f05340)
-![Stars](https://img.shields.io/github/stars/ucan-lab/docker-laravel?color=f05340)
-![Issues](https://img.shields.io/github/issues/ucan-lab/docker-laravel?color=f05340)
-![Forks](https://img.shields.io/github/forks/ucan-lab/docker-laravel?color=f05340)
+# laravel Docker
 
 ## Introduction
-
-Build a simple laravel development environment with docker-compose.
+Build Laravel development environment using Nginx + PostgreSQL with docker-compose.
+This repository is highly inspired by https://github.com/ucan-lab/docker-laravel. Many thanks to [Yuki Imamura](https://github.com/ucan-lab).
+The setting and instruction are expecially modified for **Windows OS**.
 
 ## Usage
 
 ```bash
-$ git clone git@github.com:ucan-lab/docker-laravel.git
-$ cd docker-laravel
-$ make create-project # Install the latest Laravel project
-$ make install-recommend-packages # Not required
+$ git clone git@github.com:Ryo-M-49/laravel_docker.git
+$ cd laravel_docker
+
+$ git clone [whatever repository you want to clone] ./backend # Clone the existing repository you are about to work on
+$ make init
+```
+Then, start up Command Prompt as **Administrator** on WIndows and
+```Command Prompt
+$ cd [laravel_docker root]/backend/public
+$ mklink /D storage "/work/backend/storage/app/public"
 ```
 
-http://localhost
-
-Read this [Makefile](https://github.com/ucan-lab/docker-laravel/blob/master/Makefile).
-
-## Tips
-
-Read this [Wiki](https://github.com/ucan-lab/docker-laravel/wiki).
+You are ready to go!
 
 ## Container structure
 
@@ -49,13 +45,4 @@ Read this [Wiki](https://github.com/ucan-lab/docker-laravel/wiki).
 ### db container
 
 - Base image
-  - [mysql](https://hub.docker.com/_/mysql):8.0
-
-#### Persistent MySQL Storage
-
-By default, the [named volume](https://docs.docker.com/compose/compose-file/#volumes) is mounted, so MySQL data remains even if the container is destroyed.
-If you want to delete MySQL data intentionally, execute the following command.
-
-```bash
-$ docker-compose down -v && docker-compose up
-```
+  - [alpine](https://hub.docker.com/_/postgres):8.0
