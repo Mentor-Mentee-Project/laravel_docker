@@ -1,4 +1,4 @@
-# laravel Docker
+# Laravel Docker
 
 ## Introduction
 Build Laravel development environment using Nginx + PostgreSQL with docker-compose.
