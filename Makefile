@@ -9,7 +9,6 @@ create-project:
 	@make up
 	@make laravel-install
 	docker-compose exec app php artisan key:generate
-	docker-compose exec app php artisan storage:link
 	@make fresh
 install-recommend-packages:
 	docker-compose exec app composer require doctrine/dbal
