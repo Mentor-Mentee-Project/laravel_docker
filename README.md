@@ -13,16 +13,11 @@ $ cd laravel_docker
 $ git clone [whatever repository you want to clone] ./backend # Clone the existing repository you are about to work on
 $ make init
 ```
-You have to take an either step A or B depending on your environment.
-A. If you are using Windows 
+You have to do take a following step if using Windows.
+
 ```Command Prompt
 $ cd [laravel_docker root]/backend/public
 $ mklink /D storage "/work/backend/storage/app/public"
-```
-
-B. If you are using Mac or Linux
-```
-$ docker-compose exec app php artisan storage:link
 ```
 
 You are ready to go!
